@@ -40,11 +40,11 @@ class Util:
      {RL}/  /  {G}|\\/ _ '_|{RL}\\    {RL}/ /   /   \\    \\\        {P}| {G}-r{W}, {G}--reverse {GR}={C} Reverse IP
     {RL}|  /   {G}|/  {BL}0{D}{G} \\{BL}0{D}{G}\\{RL} \\  {RL}/ |    |    \\    \\\       {P}|{Y} Yourself address for reverse shell connection
     {RL}|  | {G}|\\|      \\_\\_ {RL}/  /    |     \\    \\\      {P}|{W} 
-    {RL}|  | {G}|/    \\.\\ o\\o)  {RL}/      \\     |    \\\     {P}| {G}-p{W}, {G}--port {GR}={C} Porta
+    {RL}|  | {G}|/    \\.\\ o\\o)  {RL}/      \\     |    \\\     {P}| {G}-p{W}, {G}--port {GR}={C} Port
     {RL}\\  | {G}|     /\\\`v-v  {RL}/        |    |     \\\    {P}|{Y} Port to complet socket object
      {RL}| \\{G}/    /_| \\\_|  {RL}/         |    | \\    \\\   {P}|{W}  
-     {RL}| {G}|    /__/_     {RL}/{G}   _____{RL}  |    |  \\    \\\  {P}|{G} -h {GR}={C} help
-     {RL}\\{G}|    [__]  \_/  |_________  {RL}\   |   \\    () {P}|{Y} Something random to complete this screen :D
+     {RL}| {G}|    /__/_     {RL}/{G}   _____{RL}  |    |  \\    \\\  {P}| {G}-e{W}, {G}--eip {GR}={C} Content in EIP
+     {RL}\\{G}|    [__]  \_/  |_________  {RL}\   |   \\    () {P}|{Y} Value of EIP stack in debbuger after application crash
       {G}/    [___] (    \         \ {RL} |\ |   |   //  {P}|{W}
      {G}|    [___]                  |{RL}\| \|   /  |/   {P}| {G}-T{W}, {G}--turbo {GR}={C} Turbo mode
     {G}/|    [____]                  \  {RL}|/\ / / ||   {P}|{Y} Set turbo mode to: {G}enable{Y} (fast BoF)
