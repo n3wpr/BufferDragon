@@ -13,56 +13,67 @@ except ImportError as err:
 argv = sys.argv[1:]
 #print('argv: ', argv)
 target = ''
+rport = ''
 revIp = ''
+lport = ''
 assMode = False
 turboMode = False
 
 try:
-    opts, args = getopt.getopt(argv, 't:r:haT', ['target=', 'reverse=', 'help', 'assistant', 'turbo'])
+    opts, args = getopt.getopt(argv, 't:r:hp:P:aTc', ['target=', 'reverse=', 'help', 'lport=', 'rport=', 'assistant', 'turbo'])
     # print('opts: ', opts)
 except getopt.GetoptError as err:  # getopt.GetoptError as err:
     cor.pl("{G}Erro: {RL}"+str(err)+"{RL}")
     opts = []
     config.banner()
     sys.exit()
-
+import time
+# Tratativa padrão para a execução sem informar os devidos parametros
 if len(opts) < 1:
     config.banner()
-    config.getHelp()
+    config.dragonBanner(1)
     sys.exit()
 else:
+    # Caso seja informado o parametro '-h', certifica-se de mostrar apenas o help e encerrar a aplicação
     for opt, arg in opts:
-        if '-h' in opt:
+        if opt == '-h':
             config.getHelp()
-            sys.exit()
+        elif opt == '-c':
+            Tools.checkApps()
+        sys.exit()
     else:
-        # Trata os parametros possíveis e transfere os argumentos para variaveis
+        # Consulta os parametros passados e transfere os valores para variaveis
         for opt, arg in opts:
             if '-a' in opt or '--assistant' in opt:
                 assMode = True
             elif opt == '-T' or '--turbo' in opt:
                 turboMode = True
-            elif opts == '-t':
-                target = str(arg)
-            elif opts == '-r':
-                revIp = str(arg)
+            elif opt == '-t' or opt == '--target=':
+                target = str(arg[:15])
+            elif opt == '-r' or opt == '--reverse=':
+                revIp = str(arg[:15])
+            elif opt == '-p' or opt == '--lport':
+                lport = str(arg[:5])
+            elif opt == '-P' or opt == '--rport=':
+                rport = str(arg[:5])
         else:
-            for opt, arg in opts:
+            if target == '' and rport == '':
+                cor.pl("{C}Insert: {Y}target{C}, {Y}Rport{C}, {Y}revIP {C}AND {Y}Lport{C}. Try again.")
+                config.banner()
+                sys.exit()
+            else:
                 if assMode and turboMode:
-                    cor.pl("{RL}Assistant mode can't be set with turbo mode. Please, choose just one.{W}")
+                    cor.pl("{RL}Assistant mode{R} can't be set with {RL}turbo mode{R}. Please, choose {RL}JUST ONE.{W}")
                     sys.exit()
-                elif assMode or turboMode:# or turboMode:
+                elif assMode or turboMode:
+                    target = config.checkIP(target)
+                    rport = config.checkPort(rport)
                     if assMode:
-                        cor.pl("{G}Assistant mode{Y} has been set.{W}")
-                        Tools.fuzzerBof(target, 21)
+                        Tools.assistantMode(target, rport)
                     elif turboMode:
                         cor.pl("{G}turbo mode{Y} has been set.{W}")
-
-                    break
                 else:
                     cor.pl("{G}You need to do a choise, enter with {Y}-T{G} {BL}or{D} {Y}-a{G}.{W}")
                     sys.exit()
 
-
-#print("Passou o loop e não encerrou a execução")
 #bof = Tools.fuzzerBof('192.168.0.154', 21)
