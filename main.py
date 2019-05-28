@@ -34,13 +34,16 @@ if len(opts) < 1:
     config.dragonBanner(1)
     sys.exit()
 else:
-    # Caso seja informado o parametro '-h', certifica-se de mostrar apenas o help e encerrar a aplicação
+    # Parâmetros que possuem prioridade na execução ou que
+    # desempenham tarefas simples e sem continuidade
     for opt, arg in opts:
         if opt == '-h':
             config.getHelp()
+            sys.exit()
         elif opt == '-c':
+            cor.pl("{G}Apps exploited by this tool{W}")
             Tools.checkApps()
-        sys.exit()
+            sys.exit()
     else:
         # Consulta os parametros passados e transfere os valores para variaveis
         for opt, arg in opts:
@@ -57,7 +60,7 @@ else:
             elif opt == '-P' or opt == '--rport=':
                 rport = str(arg[:5])
         else:
-            if target == '' and rport == '':
+            if target == '' or rport == '' or revIp == '' or lport == '':
                 cor.pl("{C}Insert: {Y}target{C}, {Y}Rport{C}, {Y}revIP {C}AND {Y}Lport{C}. Try again.")
                 config.banner()
                 sys.exit()
@@ -69,7 +72,7 @@ else:
                     target = config.checkIP(target)
                     rport = config.checkPort(rport)
                     if assMode:
-                        Tools.assistantMode(target, rport)
+                        Tools.assistantMode(target, rport, revIp,lport)
                     elif turboMode:
                         cor.pl("{G}turbo mode{Y} has been set.{W}")
                 else:

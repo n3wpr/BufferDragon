@@ -53,12 +53,14 @@ class Util:
 
     @staticmethod
     def dragonBanner(escolha):
+        N_ESCOLHAS = 2
+
         if escolha == 1:
             Color.pl('''
                       {P}Overflow some shitty apps like a fuck*ng dragon blowing fire{W}
             {RL}__                  __                {P}|{W}
            {RL}( _)                {RL}( _)               {P}| {G}-h{W}, {G}--help{GR} ={C} help
-          {RL}/ / \\    Help - 1   {RL}/ /\\_\\_             {P}|{Y} This pretty useful help message for script kiddies
+          {RL}/ / \\    Help - %s   {RL}/ /\\_\\_             {P}|{Y} This pretty useful help message for script kiddies
          {RL}/ /   \\             {RL}/ / | \\ \\            {P}|{W} 
         {RL}/ /     \\           {RL}/ /  |\\ \\ \\           {P}| {G}-t{W}, {G}--target {GR}={C} Target
        {RL}/  /   {G},  {RL}\\{G} ,       {RL}/ /   /|  \\ \\          {P}|{Y} IP address of target application
@@ -80,16 +82,16 @@ class Util:
     {G}|   /  '----|   /=\____   _/    | {RL}  / //      {P}|================================================={W}
  {G}__ /  /        |  /   ___/  _/\    \ {RL} | ||       {P}| {Y}...::Developed by::...     {P}| {W}
 {G}(/-(/-\\)       /   \  (/\/\)/  {G}|    /{RL}  | /        {P}| {+} {RL}n3wpr                 {P}|    {G}Press {Y}'ESC'{W}
-              {G}(/\\/\\)           {G}/   /{RL}   //         {P}| {+} {RL}Th3_Pr0f3ss0r         {P}|   {G}three times to{W}
-                     {G}_________/   /    {RL}/          {P}| {Y}...::Version::...          {P}|  {G} exit help mode{W}
+              {G}(/\\/\\)           {G}/   /{RL}   //         {P}| {+} {RL}Th3_Pr0f3ss0r         {P}|  {G}three times to{W}
+                     {G}_________/   /    {RL}/          {P}| {Y}...::Version::...          {P}|  {G}exit help mode{W}
                     {G}\\____________/{RL}    (           {P}|  %s                 {P}| {W}
-          {W}''' % str(Util.version))
+          {W}''' % (str(escolha), str(Util.version)))
         elif escolha == 2:
             Color.pl('''
                       {P}Overflow some shitty apps like a fuck*ng dragon blowing fire{W}
             {RL}__                  __                {P}|
            {RL}( _)                {RL}( _)               {P}| {G}-c{W}, {G}--check{GR} ={C} Check list
-          {RL}/ / \\    Help - 2   {RL}/ /\\_\\_             {P}|{Y} Get a list of avaiable apps to exploit
+          {RL}/ / \\    Help - %s   {RL}/ /\\_\\_             {P}|{Y} Get a list of avaiable apps to exploit
          {RL}/ /   \\             {RL}/ / | \\ \\            {P}|{W} 
         {RL}/ /     \\           {RL}/ /  |\\ \\ \\           {P}| {G}-t{W}, {G}--target {GR}={C} Target
        {RL}/  /   {G},  {RL}\\{G} ,       {RL}/ /   /|  \\ \\          {P}|{Y} XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -110,44 +112,42 @@ class Util:
     {G}|   \\ [_____/   / /        \    | {RL}  \/ //     {P}|{Y} XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     {G}|   /  '----|   /=\____   _/    | {RL}  / //      {P}|=================================================
  {G}__ /  /        |  /   ___/  _/\    \ {RL} | ||       {P}| {Y}...::Developed by::...     {P}| {W}
-{G}(/-(/-\\)       /   \  (/\/\)/  {G}|    /{RL}  | /        {P}| {+} {RL}n3wpr                 {P}|    {G}Press {Y}'ESC' {W}
-              {G}(/\\/\\)           {G}/   /{RL}   //         {P}| {+} {RL}Th3_Pr0f3ss0r         {P}|   {G}three times to{W}
-                     {G}_________/   /    {RL}/          {P}| {Y}...::Version::...          {P}|  {G} exit help mode{W}
+{G}(/-(/-\\)       /   \  (/\/\)/  {G}|    /{RL}  | /        {P}| {+} {RL}n3wpr                 {P}|   {G}You can also be{W}
+              {G}(/\\/\\)           {G}/   /{RL}   //         {P}| {+} {RL}Th3_Pr0f3ss0r         {P}|    {G}rude and type{W}
+                     {G}_________/   /    {RL}/          {P}| {Y}...::Version::...          {P}|  {R}CTRL+C{G} to get out{W}
                     {G}\\____________/{RL}    (           {P}|  %s                 {P}| {W}
-          {W}''' % str(Util.version))
+          {W}''' % (str(escolha), str(Util.version)))
+
+        return N_ESCOLHAS
 
 # Press 'ESC' three times to exit help mode
     @staticmethod
     def getHelp():
         Util.dragonBanner(1)
-        '''try:
-            if keyboard.is_pressed('left'):
-                Util.dragonBanner(1)
-            if keyboard.is_pressed('right'):
-                Util.dragonBanner(2)
-            if keyboard.is_pressed('Esc'):
-                print("\nyou pressed Esc, so exiting...")
-                sys.exit(0)
-        except Exception as err:
-            print(err)'''
 
         #char = ord(getch.getch())
         char = []
+        P_HELP = 2
+        cc = 0
         try:
             while True:  # not char == 27:
                 # char = ord(getch.getch())
                 for x in range(3):
                     char.append(str(ord(getch.getch())))
                 if char == ['27', '91', '67'] or char == ['27', '91', '66']:  # Right key pressed - (27 and 91 and 67):  # '\x1b[C': #str(27) in str(char):
+                    cc += 1
                     Util.clearScr()
-                    Util.dragonBanner(2)
+                    Util.dragonBanner(cc)
                     char = []
                 elif char == ['27', '91', '68'] or char == ['27', '91', '65']:  # Left key pressed - (27 and 91 and 68):  # '\x1b[D':
+                    cc += 1
                     Util.clearScr()
-                    Util.dragonBanner(1)
+                    Util.dragonBanner(cc)
                     char = []
                 else:
                     sys.exit()
+                if cc == P_HELP:
+                    cc = 0
         except OverflowError or KeyboardInterrupt as err:
             Color.pl("{G}Error: {RL}" + str(err))
             sys.exit()
@@ -169,7 +169,7 @@ class Util:
 
     @staticmethod
     def checkSys():
-        check = os.name()
+        check = str(os.name)
         if check == 'nt':
             print("Recomenda-se o uso de uma distribuição Linux")
             print("Já com o set de ferramentas instalados, sendo:")
