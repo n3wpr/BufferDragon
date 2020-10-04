@@ -1,3 +1,4 @@
+
 # BufferDragon
                        (                              
        (        (      )\ )                           
@@ -14,11 +15,11 @@ Ferramenta desenvolvida junto ao professor Rafael que visa automatizar parte do 
 **Version:** *0.1.Alpha*
 
 ## To Do
-[+] Create and set listener (For test, up yourself)
-[+] Create agent class;
-[+] Make agent send debugger info;
-[+] Socket between Agent <> Server
-[+] TBD
+* Create and set listener (For test, up yourself)
+* Create agent class;
+* Make agent send debugger info;
+* Socket between Agent <> Server
+* TBD
 
 ### Overflow some shitty apps like a fuck*ng dragon blowing fire
 ```         __                  __                  |
