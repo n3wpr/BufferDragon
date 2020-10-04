@@ -1,7 +1,7 @@
 
 # BufferDragon
 $ python3 main.py<br>
-![Logo](./rsc/img/01.png)
+![Logo](./rsc/img/logo.png)
 
 Dragon visa automatizar o processo de exploração de Buffer Overflow <br>
 
