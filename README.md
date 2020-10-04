@@ -10,7 +10,7 @@
      |___(_)___/|_|    |___/|_| \__,_\__, \___/_||_|  
                                      |___/
 
-Ferramenta desenvolvida junto ao professor Rafael que visa automatizar parte do processo de exploração de Buffer Over Flow <br>
+Dragon visa automatizar o processo de exploração de Buffer Overflow <br>
 
 **Version:** *0.1.Alpha*
 
