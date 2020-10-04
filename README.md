@@ -1,14 +1,7 @@
 
 # BufferDragon
-                       (                              
-       (        (      )\ )                           
-     ( )\       )\ )  (()/(  (      ) (  (            
-     )((_)   ( (()/(   /(_)) )(  ( /( )\))( (   (     
-    ((_)_    )\ /(_)) (_))_ (()\ )(_)|(_))\ )\  )\ )  
-     | _ )  ((_|_) _|  |   \ ((_|(_)_ (()(_|(_)_(_/(  
-     | _ \_/ _ \|  _|  | |) | '_/ _` / _` / _ \ ' \)) 
-     |___(_)___/|_|    |___/|_| \__,_\__, \___/_||_|  
-                                     |___/
+$ python3 main.py
+![Logo](./rsc/img/01.png)
 
 Dragon visa automatizar o processo de exploração de Buffer Overflow <br>
 
@@ -22,7 +15,11 @@ Dragon visa automatizar o processo de exploração de Buffer Overflow <br>
 * TBD
 
 ### Overflow some shitty apps like a fuck*ng dragon blowing fire
-![Help screen](./rsc/img/01.png)
+![Help screen](./rsc/img/02.png)
+
+
+### Supported tools \[Just sample at all\]
+
 
 ### Developed by
 [+] n3wpr<br>
