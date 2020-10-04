@@ -13,6 +13,13 @@ Ferramenta desenvolvida junto ao professor Rafael que visa automatizar parte do 
 
 **Version:** *0.1.Alpha*
 
+## To Do
+[+] Create and set listener (For test, up yourself)
+[+] Create agent class;
+[+] Make agent send debugger info;
+[+] Socket between Agent <> Server
+[+] TBD
+
 ### Overflow some shitty apps like a fuck*ng dragon blowing fire
 ```         __                  __                  |
            ( _)                ( _)                 | -h, --help = help
@@ -44,4 +51,5 @@ Ferramenta desenvolvida junto ao professor Rafael que visa automatizar parte do 
 ```
 ### Developed by
 [+] n3wpr<br>
+### Suported by
 [+] Th3_Pr0f3ss0r<br>
